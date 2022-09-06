@@ -1,9 +1,16 @@
 from test_framework import generic_test
 
+def get_bit(x, i):
+    return (x >> i) & 1
+
+def swap(x, i, j):
+    mask = (1 << i) | (1 << j)
+    return x ^ mask
 
 def swap_bits(x, i, j):
-    # TODO - you fill in here.
-    return 0
+    if get_bit(x, i) == get_bit(x, j):
+        return x
+    return swap(x, i, j)
 
 
 if __name__ == '__main__':
