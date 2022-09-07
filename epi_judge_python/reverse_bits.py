@@ -1,9 +1,14 @@
 from test_framework import generic_test
 
-
 def reverse_bits(x: int) -> int:
-    # TODO - you fill in here.
-    return 0
+    res = 0
+    for i in range(32):
+        right_bit = (x >> i) & 1
+        left_bit = (x >> (63 - i)) & 1
+        res |= right_bit << (63 - i)
+        res |= left_bit << i
+    return res
+
 
 
 if __name__ == '__main__':
