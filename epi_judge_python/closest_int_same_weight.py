@@ -3,9 +3,8 @@ from test_framework import generic_test
 def get_weight(x):
     res = 0
     while x:
-        if x & 1:
-            res += 1
-        x >>= 1
+        x = x & (x - 1)
+        res += 1
     return res
 
 def closest_int_same_bit_count(x: int) -> int:
