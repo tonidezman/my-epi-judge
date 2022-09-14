@@ -7,7 +7,6 @@ def add(a, b):
         b = carry << 1
     return a
 
-
 def multiply(x: int, y: int) -> int:
     res = 0
     while x:
@@ -16,7 +15,6 @@ def multiply(x: int, y: int) -> int:
         x >>= 1
         y <<= 1
     return res
-
 
 if __name__ == '__main__':
     exit(
